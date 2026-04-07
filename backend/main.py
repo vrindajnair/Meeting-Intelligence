@@ -1,10 +1,10 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
-from textblob import TextBlob  # ✅ ADD THIS
+from textblob import TextBlob  
 
 app = FastAPI()
 
-# ✅ CORS
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -13,7 +13,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 🧠 Smart processing function
+
 def process_meeting_text(text: str):
     lines = text.split("\n")
 
@@ -54,7 +54,7 @@ def process_meeting_text(text: str):
     return decisions, action_items, summary, key_points
 
 
-# 🎯 EXTRACT API
+
 @app.post("/extract/")
 async def extract_info(file: UploadFile = File(...)):
     try:
@@ -79,7 +79,7 @@ async def extract_info(file: UploadFile = File(...)):
         }
 
 
-# 🔥 NEW SENTIMENT API
+
 @app.post("/sentiment/")
 async def get_sentiment(file: UploadFile = File(...)):
     try:
@@ -110,4 +110,4 @@ async def get_sentiment(file: UploadFile = File(...)):
 
 @app.get("/")
 def home():
-    return {"message": "Meeting Intelligence Hub API 🚀"}
+    return {"message": "Meeting Intelligence Hub API"}
