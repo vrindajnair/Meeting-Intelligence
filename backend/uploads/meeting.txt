@@ -1,0 +1,21 @@
+Project Meeting – March 28
+
+Speaker A: Okay team, let’s start. We need to finalize the API launch timeline.
+
+Speaker B: I think we should delay it by one week due to pending bugs.
+
+Speaker C: Yes, especially the authentication issue is still unresolved.
+
+Speaker A: Alright, decision taken — we will delay the API launch by one week.
+
+Speaker B: I will fix the authentication bug by April 2.
+
+Speaker C: I will handle testing and report results by April 3.
+
+Speaker A: Great, let’s make sure everything is completed before the new deadline.
+
+Speaker B: Also, we should inform the client about the delay.
+
+Speaker A: Good point. I will email the client today.
+
+Speaker C: That sounds good.
