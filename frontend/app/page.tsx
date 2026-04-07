@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-// 📊 Chart imports
+
 import {
   Chart as ChartJS,
   BarElement,
@@ -21,7 +21,7 @@ ChartJS.register(
   Legend
 );
 
-// Types
+
 type ActionItem = {
   person: string;
   task: string;
@@ -56,7 +56,7 @@ export default function Home() {
     setLoading(true);
 
     try {
-      // 🔹 Extract API
+      
       const res = await fetch("http://localhost:8000/extract/", {
         method: "POST",
         body: formData,
@@ -67,7 +67,7 @@ export default function Home() {
       const data: ResultType = await res.json();
       setResult(data);
 
-      // 🔹 Sentiment API
+      
       const sentRes = await fetch("http://localhost:8000/sentiment/", {
         method: "POST",
         body: formData,
@@ -86,7 +86,7 @@ export default function Home() {
     setLoading(false);
   };
 
-  // Emoji
+  
   const getEmoji = () => {
     if (!sentiment) return "";
     if (sentiment.sentiment === "Positive") return "😄";
@@ -94,7 +94,7 @@ export default function Home() {
     return "😐";
   };
 
-  // Color
+  
   const getColor = () => {
     if (!sentiment) return "text-gray-400";
     if (sentiment.sentiment === "Positive") return "text-green-400";
@@ -102,7 +102,7 @@ export default function Home() {
     return "text-yellow-400";
   };
 
-  // CSV Export
+  
   const exportCSV = () => {
     if (!result) return;
 
@@ -121,7 +121,7 @@ export default function Home() {
     a.click();
   };
 
-  // 📊 Chart Data
+  
   const chartData = sentiment
     ? {
         labels: ["Positive", "Neutral", "Negative"],
